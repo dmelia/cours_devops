@@ -1,0 +1,9 @@
+---
+- name: Install & configure Jenkins
+  hosts: all
+  become: true
+  become_method: sudo
+  roles:
+    - role: requirements
+    - role: jenkins
+...

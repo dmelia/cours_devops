@@ -1,33 +1,25 @@
 # DevopsFrontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.3.
+Run run.sh - requires sudo
 
-## Development server
+# HOW TO WORK ON WSL UBUNTU 20.04
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+run `apt-get update` and `apt-get upgrade`
 
-## Code scaffolding
+run `apt-get install ansible` and `apt-get install vagrant`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+You need to have virtualbox installed on your machine and have vagrant wsl access with the windows virtual box installation
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Running the Vagrant machine
-
-You may need to use --provider="PROVIDER" argument.For hyper-v use --provider="hyperv".
-Run `vagrant up`
+details here : https://www.vagrantup.com/docs/other/wsl
 
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+You might need to add to the WSL path the folder System32, to allow the linux system access to windows commands. Use this command `export PATH="$PATH:/mnt/c/Windows/System32"`
+
+You might need to add to the WSL path the folder : C:\Windows\System32\WindowsPowerShell\v1.0, to allow the linux system access to PowerShell. Use this command : `export PATH="$PATH:/mnt/c/Windows/System32/WindowsPowerShell/v1.0`
+
+Or you can simply run Vagrant on the windows host and then use the Linux WSL to execute ansible on it.
+
+Tutorial of running vagrant with WSL is available here : https://binary.run/guide/vagrant-ansible-and-virtualbox-on-wsl-windows-subsystem-for-linux/
+
+You'll also need to deactivate Hyper-V on your Windows machine (if you have it enabled) ortherwise use : `vagrant up --provider=hyperv`
