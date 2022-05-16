@@ -5,10 +5,15 @@
 # configures the configuration version (we support older styles for
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
-Vagrant.configure("2") do |config|  
+Vagrant.configure("2") do |config|
+  config.vm.provider "hyperv" do |hv|
+    hv.memory = 2048
+  end
   config.vm.define "ansible" do |ansible|
-    ansible.vm.box = "generic/fedora28"
-	ansible.vm.network "private_network", ip: "192.168.56.11", use_dhcp_assigned_default_route: true
+    ansible.vm.box = "bento/ubuntu-18.04"
+        ansible.vm.network "private_network", ip: "192.168.56.11", use_dhcp_assigned_default_route: true
 	ansible.vm.synced_folder "ansible/", "/shared"
   end
+  config.ssh.username = "vagrant"
+  config.ssh.password = "vagrant"
 end
