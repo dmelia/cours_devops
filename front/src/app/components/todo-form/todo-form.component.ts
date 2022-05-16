@@ -1,5 +1,5 @@
-import { Component, OnInit,Output, EventEmitter } from '@angular/core';
-import {Todo} from '../../models/todo.model';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Todo } from '../../models/todo.model';
 @Component({
   selector: 'app-todo-form',
   templateUrl: './todo-form.component.html',
@@ -8,11 +8,11 @@ import {Todo} from '../../models/todo.model';
 export class TodoFormComponent implements OnInit {
 
   // local state for the component
-  todoNom:string = '';
-  todoDescription:string = '';
+  todoNom = '';
+  todoDescription = '';
 
 
- // create event for emit from child and listen at parent
+  // create event for emit from child and listen at parent
   @Output() addTodo = new EventEmitter<Todo>();
   constructor() { }
 
@@ -20,14 +20,14 @@ export class TodoFormComponent implements OnInit {
   }
 
   // local method of component to emit data to parent
-  newTodo():void {
+  newTodo(): void {
     console.warn('new todo dans form');
     const todo: Todo = {
       nom: this.todoNom,
       description: this.todoDescription
-    }
-  	this.addTodo.emit(todo);
-  	this.todoNom = '';
+    };
+    this.addTodo.emit(todo);
+    this.todoNom = '';
     this.todoDescription = '';
 
   }

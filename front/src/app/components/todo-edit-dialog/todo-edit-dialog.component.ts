@@ -18,7 +18,7 @@ export class TodoEditDialogComponent implements OnInit{
   ) {}
 
   ngOnInit(): void {
-    this.etat = this.data.etat
+    this.etat = this.data.etat;
   }
 
   onNoClick(): void {
