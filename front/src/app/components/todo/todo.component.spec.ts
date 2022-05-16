@@ -1,14 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TodoService } from 'src/app/services/todo.service';
 
 import { TodoComponent } from './todo.component';
 
 describe('TodoComponent', () => {
   let component: TodoComponent;
   let fixture: ComponentFixture<TodoComponent>;
+  let mockService: any;
 
   beforeEach(async () => {
+    mockService = jasmine.createSpyObj(['getAll']);
+    mockService.getAll.and.returnValue([]);
     await TestBed.configureTestingModule({
-      declarations: [ TodoComponent ]
+      declarations: [ TodoComponent ],
+      providers: [{provide: TodoService, useValue: mockService}]
     })
     .compileComponents();
   });

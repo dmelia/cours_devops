@@ -1,3 +1,5 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 /* You can add global styles to this file, and also import other style files */
 /* Include the padding and border in an element's total width and height */
 * {
@@ -70,6 +72,18 @@ ul li.checked::before {
   color: white;
 }
 
+.edit {
+  position: absolute;
+  right: 43px;
+  top: 0;
+  padding: 12px 16px 3px 16px;
+}
+
+.edit:hover {
+  background-color: orange;
+  color: white;
+}
+
 /* Style the header */
 .header {
   background-color: #f44336;
@@ -113,3 +127,8 @@ input {
 .addBtn:hover {
   background-color: #bbb;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

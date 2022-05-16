@@ -1,7 +1,13 @@
 <ul>
-  <li *ngFor="let todo of todos | async">
-  	{{ todo.nom}} - {{todo.description}}
-	<span [class.circle-red]="todo.etat == 0" [class.circle-orange]="todo.etat == 1" [class.circle-gree]="todo.etat == 2"></span>
-  	<span class="close" (click)="deleteTodo(todo.id)">X</span>
-  </li>
+	<li *ngFor="let todo of todos | async">
+		{{ todo.nom}} - {{todo.description}}
+		<span [class.circle-red]="todo.etat == 0" [class.circle-orange]="todo.etat == 1"
+			[class.circle-green]="todo.etat == 2">
+			 {{getEtatString(todo)}}
+		</span>
+		<span class="edit" (click)="openDialog(todo)">
+			<mat-icon aria-hidden="false" aria-label="Edit">edit</mat-icon>
+		</span>
+		<span class="close" (click)="deleteTodo(todo.id)">X</span>
+	</li>
 </ul>
