@@ -17,18 +17,18 @@ export class TodoComponent implements OnInit {
   todos: Observable<Todo[]> = of([]); // interface
 
   // depandancy injection
-  constructor(private _todosServices: TodoService) { }
+  constructor(private todosServices: TodoService) { }
 
   // mounted hooks
   ngOnInit(): void {
-    this.todos = this._todosServices.getAll();
+    this.todos = this.todosServices.getAll();
   }
 
   // method for create new todo
   newTodo(item: Todo): void {
-    this._todosServices.create(item).pipe(
+    this.todosServices.create(item).pipe(
       take(1),
-      tap(() => this.todos = this._todosServices.getAll()),
+      tap(() => this.todos = this.todosServices.getAll()),
       catchError(e => e)
     ).subscribe();
   }
@@ -41,18 +41,18 @@ export class TodoComponent implements OnInit {
 
   // method for remove todo from list
   deleteTodo(id: number): void {
-    this._todosServices.delete(id).pipe(
+    this.todosServices.delete(id).pipe(
       take(1),
-      tap(() => this.todos = this._todosServices.getAll()),
+      tap(() => this.todos = this.todosServices.getAll()),
       catchError(e => e)
     ).subscribe();
   }
 
   // method for create new todo
   editTodo(item: Todo): void {
-    this._todosServices.update(item.id, item).pipe(
+    this.todosServices.update(item.id, item).pipe(
       take(1),
-      tap(() => this.todos = this._todosServices.getAll()),
+      tap(() => this.todos = this.todosServices.getAll()),
       catchError(e => e)
     ).subscribe();
   }
