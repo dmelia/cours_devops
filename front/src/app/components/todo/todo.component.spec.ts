@@ -12,10 +12,10 @@ describe('TodoComponent', () => {
     mockService = jasmine.createSpyObj(['getAll']);
     mockService.getAll.and.returnValue([]);
     await TestBed.configureTestingModule({
-      declarations: [ TodoComponent ],
-      providers: [{provide: TodoService, useValue: mockService}]
+      declarations: [TodoComponent],
+      providers: [{ provide: TodoService, useValue: mockService }]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -24,7 +24,7 @@ describe('TodoComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create TodoComponent', () => {
     expect(component).toBeTruthy();
   });
 });

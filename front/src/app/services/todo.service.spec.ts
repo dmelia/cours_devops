@@ -13,7 +13,7 @@ describe('TodoService', () => {
     service = TestBed.inject(TodoService);
   });
 
-  it('should be created', () => {
+  it('should create TodoService', () => {
     expect(service).toBeTruthy();
   });
 });

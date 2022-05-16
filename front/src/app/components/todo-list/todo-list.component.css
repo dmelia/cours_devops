@@ -3,6 +3,7 @@
     width: 12px;
     height: 12px;
     border-radius: 50%;
+    padding: 5px;
 }
 
 .circle-orange {
@@ -10,6 +11,7 @@
     width: 12px;
     height: 12px;
     border-radius: 50%;
+    padding: 5px;
 }
 
 .circle-green {
@@ -17,4 +19,5 @@
     width: 12px;
     height: 12px;
     border-radius: 50%;
+    padding: 5px;
 }

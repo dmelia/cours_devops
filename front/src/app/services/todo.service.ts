@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Todo } from '../models/todo.model';
 
 const baseUrl = 'http://localhost:8080/api/todo';
@@ -22,7 +22,6 @@ export class TodoService {
   }
 
   create(data: any): Observable<any> {
-    console.warn('in create : ', data);
     return this.http.post(baseUrl, data);
   }
 

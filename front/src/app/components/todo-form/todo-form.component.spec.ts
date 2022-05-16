@@ -19,7 +19,7 @@ describe('TodoFormComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create TodoFormComponent', () => {
     expect(component).toBeTruthy();
   });
 });

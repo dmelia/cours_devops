@@ -24,7 +24,7 @@ describe('TodoEditDialogComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create TodoEditDialogComponent', () => {
     expect(component).toBeTruthy();
   });
 });

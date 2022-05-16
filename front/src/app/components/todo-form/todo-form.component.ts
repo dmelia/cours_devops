@@ -21,7 +21,6 @@ export class TodoFormComponent implements OnInit {
 
   // local method of component to emit data to parent
   newTodo(): void {
-    console.warn('new todo dans form');
     const todo: Todo = {
       nom: this.todoNom,
       description: this.todoDescription

@@ -26,11 +26,16 @@ export class TodoComponent implements OnInit {
 
   // method for create new todo
   newTodo(item: Todo): void {
+    let result: any;
     this.todosServices.create(item).pipe(
       take(1),
-      tap(() => this.todos = this.todosServices.getAll()),
+      tap((res) => {
+        this.todos = this.todosServices.getAll();
+        result = res;
+      }),
       catchError(e => e)
     ).subscribe();
+    return result;
   }
 
   // method for mark todo as completed

@@ -3,7 +3,7 @@
 		{{ todo.nom}} - {{todo.description}}
 		<span [class.circle-red]="todo.etat == 0" [class.circle-orange]="todo.etat == 1"
 			[class.circle-green]="todo.etat == 2">
-			 {{getEtatString(todo)}}
+			{{getEtatString(todo)}}
 		</span>
 		<span class="edit" (click)="openDialog(todo)">
 			<mat-icon aria-hidden="false" aria-label="Edit">edit</mat-icon>
