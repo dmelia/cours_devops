@@ -8,7 +8,7 @@ import { Todo } from 'src/app/models/todo.model';
   templateUrl: './todo-edit-dialog.component.html',
   styleUrls: ['./todo-edit-dialog.component.css']
 })
-export class TodoEditDialogComponent implements OnInit{
+export class TodoEditDialogComponent implements OnInit {
 
   etat: number;
 
@@ -23,6 +23,12 @@ export class TodoEditDialogComponent implements OnInit{
 
   onNoClick(): void {
     this.dialogRef.close();
+  }
+
+  sendData(): void {
+    this.dialogRef.close({
+      ...this.data,
+      etat: this.etat });
   }
 
 }

@@ -70,6 +70,7 @@ export class TodoListComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
+      console.warn('result : ', result);
       if (result && result.id){
         this.editTodo(result);
       }
