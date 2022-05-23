@@ -1,0 +1,23 @@
+.circle-red {
+    background: red;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.circle-orange {
+    background: orange;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.circle-green {
+    background: green;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    padding: 5px;
+}
