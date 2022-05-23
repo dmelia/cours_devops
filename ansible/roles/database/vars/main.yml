@@ -1,0 +1,5 @@
+---
+mysql_root_password: "test123"
+mysql_prestashop_user: "root"
+mysql_prestashop_password: "test123"
+...
