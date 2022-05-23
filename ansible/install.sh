@@ -12,4 +12,6 @@ apt install sshpass -y
 
 cp /shared/ansible.cfg /etc/ansible/ansible.cfg
 
-ansible-playbook /shared/playbook.yml -i /shared/hosts
+cd /shared/
+
+ansible-playbook playbook.yml -i hosts

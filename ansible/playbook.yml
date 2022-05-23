@@ -6,4 +6,5 @@
   roles:
     - role: requirements
     - role: jenkins
+    - role: database
 ...
